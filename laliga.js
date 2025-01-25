@@ -11,7 +11,7 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " w3-red";
   }
-  let matchDateTime = new Date(2025, 0, 25, 14, 30);
+
   function convertTime() {
   //user timezone
   const targetTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
