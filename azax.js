@@ -1,7 +1,7 @@
 	var i1 = document.querySelector('#t1'); 
   var l='https://me.webcric.com/frame5.htm';
-  var l1='https://me.webcric.com/frame3.htm';
-  var l='https://me.webcric.com/hindi.htm';
+  var l='https://me.webcric.com/frame3.htm';
+  var l1='https://me.webcric.com/hindi.htm';
   var l='https://s.bdixtv24.com/sportstv.php?c=star1in';
   var l='https://fclembed.online/hembedplayer/csstream1/1/960/540';
 	i1.setAttribute('src', l1); 
