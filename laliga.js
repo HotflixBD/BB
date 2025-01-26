@@ -1,22 +1,28 @@
 function openCity(evt, cityName) {
-    var i, x, tablinks;
-    x = document.getElementsByClassName("city");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < x.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " w3-red";
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
   }
-
-  function convertTime() {
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+  
+function convertTime() {
   //user timezone
   const targetTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+   /*
+	Note:
+	JavaScript counts months from 0 to 11:
+	January = 0.
+	December = 11. 
+	*/
   //match date time
-  //let matchDateTime = new Date(2025, 0, 25, 14, 30);
+  let matchDateTime = new Date(2025, 0, 26, 09, 30);	
   
   if ((new Date().getDate()) > (matchDateTime.getDate())) {
     document.getElementById("match_yet_to_begin").style.display = 'none';
@@ -28,6 +34,8 @@ function openCity(evt, cityName) {
   if ((new Date().getDate() >= matchDateTime.getDate()) && (new Date().getTime() >= matchDateTime.getTime())) {
     document.getElementById("match_yet_to_begin").style.display = 'none';
     document.getElementById("output").innerText = '.. Sports108 Live .. ';
+    document.getElementById("output").href = "#";
+    document.getElementById("outputColor").style.backgroundColor="#f44336";
     return;
   }
 
@@ -62,6 +70,7 @@ function openCity(evt, cityName) {
   // display the match date time
   document.getElementById("output").innerText = outputFinal;
 }
+
 
 
 
